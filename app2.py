@@ -120,7 +120,7 @@ app.layout = dbc.Container(children=[
                         ], style={"padding-bottom": "0px", "padding-top": "0px"})
                     ], style=tab_card1)
                 ], sm=4)
-            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96vh"}),
+            ], className ='g-2 my-auto', style={"margin-top": "7px"}),
 
             # Linha 2 - Coluna da direita
             dbc.Row([
@@ -141,7 +141,7 @@ app.layout = dbc.Container(children=[
                     ], style=tab_card)
                 ])
 
-            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96vh"})
+            ], className ='g-2 my-auto', style={"margin-top": "7px"})
             
 
         ], sm=10)
@@ -193,6 +193,5 @@ def render_content(tab, index):
 
 # Expondo o servidor Flask para o Render
 server = app.server
-
 if __name__ == "__main__":
     app.run_server(debug=True)
