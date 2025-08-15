@@ -33,7 +33,7 @@ def layout_diagnostico(df_fwd, df_iri):
                             
                             html.P("Condition (FWD)",
                             style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "3px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False})
+                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False}, style={"height": "130px"})
 
                         ])
                 
@@ -47,7 +47,7 @@ def layout_diagnostico(df_fwd, df_iri):
                         dbc.CardBody([
                             html.P("Condition (IRI)",
                             style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "0px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False})
+                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False}, style={"height": "130px"})
                         ])
 
                     ], style=tab_card1)

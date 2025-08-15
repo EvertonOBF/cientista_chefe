@@ -22,7 +22,7 @@ def layout_diag_iri(df_iri):
 
                 # Gráfico de barras - Percentual de segmentos classificados como ruins ou péssimos (IRI)
                 dcc.Graph(id='grafico-condicao-iri2', config={"displayModeBar": False})
-            ])
+            ], style={"height": "600px"})
 
         ], className='g-2 my-auto', style={"margin-top": "7px"})
 
