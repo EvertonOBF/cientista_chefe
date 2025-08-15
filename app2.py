@@ -31,6 +31,7 @@ tabs_styles = {
 }
 tab_style = {
     'borderBottom': '1px solid #d6d6d6',
+    'borderTop': '1px solid #d6d6d6',
     'padding': '5px',
     'backgroundColor': cor,
     'borderLeft': '1px solid #d6d6d6',
@@ -87,7 +88,7 @@ app.layout = dbc.Container(children=[
 
                     ])
                 ], style=tab_card1)
-            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96.7vh"})
+            ], className ='g-1 my-auto', style={"margin-top": "7px", "height":"98.2vh"})
         ], sm=2),
         
         # Coluna da direita - Gráficos
@@ -122,35 +123,35 @@ app.layout = dbc.Container(children=[
                         ], style={"padding-bottom": "0px", "padding-top": "0px"})
                     ], style=tab_card1)
                 ], sm=4)
-            ], className ='g-2 my-auto', style={"margin-top": "7px"}),
+            ], className ='g-1 my-auto', style={"margin-top": "7px"}),
 
             # Linha 2 - Coluna da direita
             dbc.Row([
                 dbc.Col([
-                    dbc.Card([
-                        dcc.Tabs(id="tabs-with-props", value='tab-4', children=[
-                            dcc.Tab(label=f'Highway Diagnostics', value='tab-4', style=tab_style, selected_style=tab_selected_style),
-                            dcc.Tab(label='Pavement Condition', value='tab-1', style=tab_style, selected_style=tab_selected_style),
-                            dcc.Tab(label=f'Segments Classified (IRI)', value='tab-3', style=tab_style, selected_style=tab_selected_style),
-                                
+                    
+                    dcc.Tabs(id="tabs-with-props", value='tab-4', children=[
+                        dcc.Tab(label=f'Highway Diagnostics', value='tab-4', style=tab_style, selected_style=tab_selected_style),
+                        dcc.Tab(label='Pavement Condition', value='tab-1', style=tab_style, selected_style=tab_selected_style),
+                        dcc.Tab(label=f'Segments Classified (IRI)', value='tab-3', style=tab_style, selected_style=tab_selected_style),
                             
-                            ], colors={
-                                "border": "white",
-                                "primary": "gold",
-                                "background": "cornsilk"
-                            }),
-                            html.Div(id='tabs-content-props-4')
-                    ], style=tab_card)
+                        
+                        ], colors={
+                            "border": "white",
+                            "primary": "gold",
+                            "background": "cornsilk"
+                        }),
+                        html.Div(id='tabs-content-props-4')
+                    
                 ])
 
-            ], className ='g-1 my-auto', style={"margin-top": "7px", "height":"86vh"})
+            ], className ='g-1 my-auto', style={"margin-top": "7px", "height":"89vh"})
             
 
         ], sm=10)
 
-    ], className ='g-2 my-auto', style={"margin-top": "7px"})
+    ], className ='g-2 my-auto', style={"margin-top": "-20px"})
                             
-], fluid=True, style={"height":"100vh"})
+], fluid=True, style={"height":"100vh", "margin-top": "-8px"})
 
 # Callbacks para atualizar gráficos e cards:
 

@@ -91,8 +91,8 @@ def grafico_tab_1(df2, category_orders, color_discrete_map, index):
         legend=dict(title=index, orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"),
         xaxis = dict(title=""), bargap=0.3)
 
-    fig.update_layout({'margin':{'t':50, 'b':0}},
-                      #annotations=[
+    fig.update_layout({'margin':{'t':50, 'b':0, 'l':120}},
+                      #annotations=[11
         #dict(text="*  Surface treatment", xref="paper",
         #    yref="paper", x=0.0, y=1.1, showarrow=False, font=dict(size=14), align="left")]
                       )

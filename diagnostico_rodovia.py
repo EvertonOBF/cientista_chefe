@@ -24,7 +24,7 @@ def layout_diagnostico(df_fwd, df_iri):
                             html.Div(id="resumo-via")
                         ])
                     ], style=tab_card1)
-                ], className='g-1 my-auto', style={"margin-top": "0px", "margin-left": "0px"}),
+                ], className='g-1 my-auto', style={"margin-top": "0px"}),
                 
                 # Gráfico de Barras - Condição FWD
                 dbc.Row([
@@ -61,18 +61,18 @@ def layout_diagnostico(df_fwd, df_iri):
                 dbc.Row([
                     dbc.Col([
                         dbc.Card([
-                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "547px", "border": "none"})
+                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "564px", "border": "none"})
                         ], style=tab_card1)
                     ])
 
-                ], className='g-0 my-auto', style={"margin-top": "-10px"})
+                ], className='g-0 my-auto', style={"margin-top": "-10px", "margin-left":"5px"})
             
             ], md=7)
             
         ], className='g-1 my-auto', style={"margin-top": "0px", "margin-left":"0px"})
 
 
-    ], fluid=True, style={"height":"81vh"})
+    ], fluid=True, style={"height":"81vh", "marginTop":"-2px"})
 
 def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
 
@@ -149,7 +149,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_fwd.update_layout({'margin':{'t':10, 'b':5}})
         fig_fwd.update_layout(
             showlegend=False,
-            height=110,#238, 
+            height=125,#238, 
             bargap=0.4,
             xaxis = dict(title=None))
 
@@ -184,7 +184,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_iri.update_layout({'margin':{'t':10, 'b':5}})
         fig_iri.update_layout(
             showlegend=False,
-            height=118,#238, 
+            height=126,#238, 
             bargap=0.4, 
             xaxis=dict(title=None))
         
