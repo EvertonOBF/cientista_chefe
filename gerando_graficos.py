@@ -85,7 +85,7 @@ def grafico_tab_1(df2, category_orders, color_discrete_map, index):
                 category_orders=category_orders,
                 color_discrete_map=color_discrete_map,
                 hover_name='VIA',
-                hover_data={'Condition': True, 'Proportion (%)': True, 'VIA':False, "Pavement type":True}, template="simple_white", height=500)
+                hover_data={'Condition': True, 'Proportion (%)': True, 'VIA':False, "Pavement type":True}, template="simple_white", height=480)
 
     fig.update_layout(
         legend=dict(title=index, orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"),
