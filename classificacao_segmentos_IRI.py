@@ -63,7 +63,7 @@ def registrar_callbacks_diagnostico_iri(app, df_iri):
                     text="Proportion (%)", 
                     template="simple_white",
                     color_discrete_sequence=["#1f77b4"],
-                    height=535,
+                    height=450,
                     hover_data={"VIA": False, "pattern": False, "Proportion (%)": False})
 
         # Layout
