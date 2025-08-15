@@ -74,15 +74,17 @@ app.layout = dbc.Container(children=[
                         
                         html.H5("Highway Monitoring System of Ceará", style={"textAlign": "center", "fontSize":"110%"}),
                         html.Hr(style={"marginBottom":"30px"}),
-                        html.H6("Index:"),
+                        
+                        html.H6("Highway:"),
+                        dcc.Dropdown(lista_vias, lista_vias[0], id="rodovia", multi=False, style={"width": "200px", "font-size": "14px", "marginBottom":"30px"}),
+                        
+                        html.H6("Parameters:"),
 
                         dcc.RadioItems(["IRI (Profilometer)", "Deflection (FWD)"], 
                                        "Deflection (FWD)", id="index", 
                                        style={"marginBottom":"30px"}, 
                                        labelStyle={"display": "flex", "gap": "8px", "alignItems": "center"}),
 
-                        html.H6("Highway:"),
-                        dcc.Dropdown(lista_vias, lista_vias[0], id="rodovia", multi=False, style={"width": "200px", "font-size": "14px"})
                     ])
                 ], style=tab_card1)
             ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96.7vh"})
@@ -128,7 +130,7 @@ app.layout = dbc.Container(children=[
                     dbc.Card([
                         dcc.Tabs(id="tabs-with-props", value='tab-4', children=[
                             dcc.Tab(label=f'Highway Diagnostics', value='tab-4', style=tab_style, selected_style=tab_selected_style),
-                            dcc.Tab(label='Pavement condition', value='tab-1', style=tab_style, selected_style=tab_selected_style),
+                            dcc.Tab(label='Pavement Condition', value='tab-1', style=tab_style, selected_style=tab_selected_style),
                             dcc.Tab(label=f'Segments Classified (IRI)', value='tab-3', style=tab_style, selected_style=tab_selected_style),
                                 
                             
@@ -141,7 +143,7 @@ app.layout = dbc.Container(children=[
                     ], style=tab_card)
                 ])
 
-            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"86vh"})
+            ], className ='g-1 my-auto', style={"margin-top": "7px", "height":"86vh"})
             
 
         ], sm=10)

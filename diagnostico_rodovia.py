@@ -7,7 +7,7 @@ import pandas as pd
 # Estilo padronizado usado nos outros gráficos
 main_config = {"margin": {"t": 10, "b": 0, "l": 10, "r": 10}}
 cor = "#f0f8ff"
-tab_card1 = {"height": "100%", "padding": "0px", "margin-top":"5px", "margin-left":"1px"}
+tab_card1 = {"height": "100%", "padding": "0px", "margin-top":"5px", "margin-left":"-10px", "margin-right":"-10px"}
 
 def layout_diagnostico(df_fwd, df_iri):
     return dbc.Container([
@@ -23,8 +23,8 @@ def layout_diagnostico(df_fwd, df_iri):
                         dbc.CardBody([
                             html.Div(id="resumo-via")
                         ])
-                    ])
-                ], className='g-0 my-auto', style={"margin-top": "0px"}),
+                    ], style=tab_card1)
+                ], className='g-1 my-auto', style={"margin-top": "0px", "margin-left": "0px"}),
                 
                 # Gráfico de Barras - Condição FWD
                 dbc.Row([
@@ -39,7 +39,7 @@ def layout_diagnostico(df_fwd, df_iri):
                 
                     ], style=tab_card1)
                 
-                ], className='g-0 my-auto', style={"margin-top": "0px"}),
+                ], className='g-1 my-auto', style={"margin-top": "5px"}),
 
                 # Gráfico de Barras - Condição IRI
                 dbc.Row([
@@ -47,12 +47,12 @@ def layout_diagnostico(df_fwd, df_iri):
                         dbc.CardBody([
                             html.P("Condition (IRI)",
                             style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "0px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False})#, style={"height": "120px"})
+                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False})
                         ])
 
                     ], style=tab_card1)
                 
-                ], className='g-0 my-auto', style={"margin-top": "0px"})
+                ], className='g-1 my-auto', style={"margin-top": "5px"})
             
             ], md=5),
 
@@ -61,15 +61,15 @@ def layout_diagnostico(df_fwd, df_iri):
                 dbc.Row([
                     dbc.Col([
                         dbc.Card([
-                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "550px", "border": "none"})
-                        ])
+                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "547px", "border": "none"})
+                        ], style=tab_card1)
                     ])
 
-                ], className='g-0 my-auto', style={"margin-top": "5px"})
+                ], className='g-0 my-auto', style={"margin-top": "-10px"})
             
             ], md=7)
             
-        ], className='g-2 my-auto', style={"margin-top": "5px"})
+        ], className='g-1 my-auto', style={"margin-top": "0px", "margin-left":"0px"})
 
 
     ], fluid=True, style={"height":"81vh"})
