@@ -32,14 +32,14 @@ def layout_diagnostico(df_fwd, df_iri):
                         dbc.CardBody([
                             
                             html.P("Condition (FWD)",
-                            style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "3px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False}, style={"height": "130px"})
+                            style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "0px", "marginLeft": "15px"}),
+                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False})#, style={"height": "120px"})
 
                         ])
                 
                     ], style=tab_card1)
                 
-                ], className='g-2 my-auto', style={"margin-top": "5px"}),
+                ], className='g-0 my-auto', style={"margin-top": "0px"}),
 
                 # Gráfico de Barras - Condição IRI
                 dbc.Row([
@@ -47,12 +47,12 @@ def layout_diagnostico(df_fwd, df_iri):
                         dbc.CardBody([
                             html.P("Condition (IRI)",
                             style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "0px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False}, style={"height": "130px"})
+                            dcc.Graph(id='grafico-condicao-iri', config={"displayModeBar": False})#, style={"height": "120px"})
                         ])
 
                     ], style=tab_card1)
                 
-                ], className='g-2 my-auto', style={"margin-top": "5px"})
+                ], className='g-0 my-auto', style={"margin-top": "0px"})
             
             ], md=5),
 
@@ -149,7 +149,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_fwd.update_layout({'margin':{'t':10, 'b':5}})
         fig_fwd.update_layout(
             showlegend=False,
-            height=120,#238, 
+            height=110,#238, 
             bargap=0.4,
             xaxis = dict(title=None))
 
@@ -184,7 +184,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_iri.update_layout({'margin':{'t':10, 'b':5}})
         fig_iri.update_layout(
             showlegend=False,
-            height=120,#238, 
+            height=118,#238, 
             bargap=0.4, 
             xaxis=dict(title=None))
         

@@ -85,7 +85,7 @@ app.layout = dbc.Container(children=[
                         dcc.Dropdown(lista_vias, lista_vias[0], id="rodovia", multi=False, style={"width": "200px", "font-size": "14px"})
                     ])
                 ], style=tab_card1)
-            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96vh"})
+            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96.7vh"})
         ], sm=2),
         
         # Coluna da direita - Gráficos
@@ -141,7 +141,7 @@ app.layout = dbc.Container(children=[
                     ], style=tab_card)
                 ])
 
-            ], className ='g-2 my-auto', style={"margin-top": "7px"})
+            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"86vh"})
             
 
         ], sm=10)
