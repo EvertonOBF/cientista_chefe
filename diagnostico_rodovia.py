@@ -149,7 +149,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_fwd.update_layout({'margin':{'t':10, 'b':5}})
         fig_fwd.update_layout(
             showlegend=False,
-            height=130,#238, 
+            height=120,#238, 
             bargap=0.4,
             xaxis = dict(title=None))
 
@@ -184,7 +184,7 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_iri.update_layout({'margin':{'t':10, 'b':5}})
         fig_iri.update_layout(
             showlegend=False,
-            height=130,#238, 
+            height=120,#238, 
             bargap=0.4, 
             xaxis=dict(title=None))
         
