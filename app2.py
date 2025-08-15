@@ -120,7 +120,7 @@ app.layout = dbc.Container(children=[
                         ], style={"padding-bottom": "0px", "padding-top": "0px"})
                     ], style=tab_card1)
                 ], sm=4)
-            ], className ='g-2 my-auto', style={"margin-top": "7px"}),
+            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96vh"}),
 
             # Linha 2 - Coluna da direita
             dbc.Row([
@@ -141,7 +141,7 @@ app.layout = dbc.Container(children=[
                     ], style=tab_card)
                 ])
 
-            ], className ='g-2 my-auto', style={"margin-top": "7px"})
+            ], className ='g-2 my-auto', style={"margin-top": "7px", "height":"96vh"})
             
 
         ], sm=10)

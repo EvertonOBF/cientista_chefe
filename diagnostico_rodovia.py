@@ -61,7 +61,7 @@ def layout_diagnostico(df_fwd, df_iri):
                 dbc.Row([
                     dbc.Col([
                         dbc.Card([
-                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "580px", "border": "none"})
+                            html.Iframe(id="iframe-mapa", style={"width": "100%", "height": "550px", "border": "none"})
                         ])
                     ])
 
