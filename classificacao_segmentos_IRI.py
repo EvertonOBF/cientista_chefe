@@ -40,7 +40,7 @@ def _build_iri_static_figure(df_iri: pd.DataFrame):
         text="Proportion (%)",
         template="simple_white",
         color_discrete_sequence=["#1f77b4"],
-        height=500,
+        height=450,
         hover_data={"VIA": False, "pattern": False, "Proportion (%)": False},
     )
 
@@ -48,7 +48,7 @@ def _build_iri_static_figure(df_iri: pd.DataFrame):
     fig.update_layout(
         xaxis=dict(title=""),
         bargap=0.4,
-        margin={"t": 30, "b": 0, 'l':120},
+        margin={"t": 30, "b": 20, 'l':120},
         legend=dict(
             title_text="",
             # orientation='h',  # (deixado como antes, comentado)
