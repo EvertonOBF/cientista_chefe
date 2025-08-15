@@ -191,5 +191,8 @@ def render_content(tab, index):
     elif tab == 'tab-4':
        return layout_diagnostico(df_fwd, df_iri)
 
+# Expondo o servidor Flask para o Render
+server = app.server
+
 if __name__ == "__main__":
     app.run_server(debug=True)
