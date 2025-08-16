@@ -14,7 +14,7 @@ def layout_diagnostico(df_fwd, df_iri):
 
         dbc.Row([
 
-            # Primeira Coluna (Condições da Rodovia, Grpaficos de barra (FWD e IRI)
+            # Primeira Coluna (Condições da Rodovia, Gráficos de barra (FWD e IRI)
             dbc.Col([
 
                 # Resumo da rodovia
@@ -33,7 +33,7 @@ def layout_diagnostico(df_fwd, df_iri):
                             
                             html.P("Condition (FWD)",
                             style={"marginBottom": "0px", "fontSize": "14px", "marginTop": "0px", "marginLeft": "15px"}),
-                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False})#, style={"height": "120px"})
+                            dcc.Graph(id='grafico-condicao-fwd', config={"displayModeBar": False})
 
                         ])
                 
@@ -103,8 +103,6 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         pavimento = diag['pavimentação'].values[0]
         fator = diag['fator_adimissão'].values[0]
 
-        #total_fwd = len(fwd)
-        #total_iri = len(iri)
         fwd_crit = (fwd['Condition'] == 'Unacceptable').mean() * 100
         iri_crit = ((iri['Condition'] == 'Very Poor') | (iri['Condition'] == 'Poor')).mean() * 100
         
@@ -118,9 +116,6 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
                     html.Li(f"Segment length: {extension} km"),
                     html.Li(f"Pavement type: {pavimento}"),
                     html.Li(f"Admission Factor (FWD): {fator} × 10⁻² mm"),
-                    
-                    #html.Li(f"Total segments evaluated (FWD): {total_fwd}"),
-                    #html.Li(f"Total segments evaluated (IRI): {total_iri}"),
                     html.Li(f"FWD - % of segments classified as Unacceptable: {fwd_crit:.1f}%"),
                     html.Li(f"IRI - % of segments classified as Poor or Very Poor: {iri_crit:.1f}%"),
                 ], style={"paddingLeft": "30px", "marginBottom": "0", "marginTop": "0", "fontSize": "15px"})
@@ -184,23 +179,10 @@ def registrar_callbacks_diagnostico(app, fwd_df, iri_df, df_diag):
         fig_iri.update_layout({'margin':{'t':10, 'b':5}})
         fig_iri.update_layout(
             showlegend=False,
-            height=126,#238, 
+            height=126,
             bargap=0.4, 
             xaxis=dict(title=None))
         
-        # mapa
-        # if  ("Profilometer (IRI)" in index):
-        #     if via == "CE-155 - (II)":
-        #         src_mapa = "/assets/mapa_ce_155 - (II)_iri.html"
-        #     else:
-        #         src_mapa = f"/assets/mapa_ce_{via.split('-')[1]}_iri.html"
-        
-        # else:
-        #     if via == "CE-155 - (II)":
-        #         src_mapa = "/assets/mapa_ce_155_II.html"
-        #     else:
-        #         src_mapa = f"/assets/mapa_ce_{via.split('-')[1]}.html"
-
         if via == "All":
             src_mapa = "/assets/mapa_ce_all.html"  # ou use um mapa genérico
         

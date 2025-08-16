@@ -6,10 +6,13 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import plotly.express as px
-import gerando_graficos as gg
 
-from diagnostico_rodovia import layout_diagnostico, registrar_callbacks_diagnostico
-from classificacao_segmentos_IRI import layout_diag_iri  # (sem callbacks)
+# =====================
+# Funções internas
+# =====================
+import gerando_graficos as gg
+from diagnostico_rodovia import layout_diagnostico, registrar_callbacks_diagnostico 
+from classificacao_segmentos_IRI import layout_diag_iri
 
 # =====================
 # Carregando os dados
@@ -60,11 +63,11 @@ lista_vias = ["All"] + df_fwd["VIA"].unique().tolist()
 # =====================
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True)
 
-# Callbacks do diagnóstico geral (tab 4) permanecem
+# Callbacks do diagnóstico geral (tab 4)
 registrar_callbacks_diagnostico(app, df_fwd, df_iri, df_diag)
 
 # =====================
-# Layouts prontos das abas (constantes)
+# Layouts prontos das abas
 # =====================
 tab1_layout = html.Div([
     html.P(
@@ -144,7 +147,7 @@ app.layout = dbc.Container(children=[
 # Callbacks
 # =====================
 
-# A) Callback de abas: apenas alterna entre layouts prontos (não recalcula figuras)
+# A) Callback de abas: apenas alterna entre layouts prontos
 @app.callback(
     Output("tabs-content-props-4", "children"),
     Input("tabs-with-props", "value"),
