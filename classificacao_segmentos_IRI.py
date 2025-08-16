@@ -83,6 +83,6 @@ def layout_diag_iri(df_iri: pd.DataFrame):
                     style={"marginBottom": "20px", "fontSize": "16px", "marginTop": "10px", "marginLeft": "15px"},
                 ),
                 dcc.Graph(id="grafico-condicao-iri2", figure=iri_fig, config={"displayModeBar": False}),
-            ], style={"height": "550px"})
-        ], className="g-2 my-auto", style={"margin-top": "7px"})
+            ], style={"height": "500px"})
+        ], className="g-2 my-auto", style={"margin-top": "7px", "margin-bottom":"10px"})
     ], fluid=True, style={"height": "81vh"})
